@@ -40,7 +40,8 @@ set number
 set numberwidth=1
 set tabstop=2
 set expandtab
-let g:netrw_liststyle=3 "tree-style directories
 :map t :echo 'Current time is ' . strftime('%c')<CR>
 colorscheme lucariox
 set runtimepath^=~/.vim/plugin
+
+let g:netrw_liststyle=3 "tree-style directories
