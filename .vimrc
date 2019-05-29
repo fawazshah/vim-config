@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
-
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,6 +39,7 @@ set ruler
 set number
 set numberwidth=1
 set tabstop=2
+set shiftwidth=2
 set expandtab
 :map t :echo 'Current time is ' . strftime('%c')<CR>
 colorscheme lucariox
