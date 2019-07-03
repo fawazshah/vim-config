@@ -45,4 +45,13 @@ set expandtab
 colorscheme lucariox
 set runtimepath^=~/.vim/plugin
 
-let g:netrw_liststyle=3 "tree-style directories
+" Create undo directory
+" Allows undo even after a file has been closed
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
+" tree-style directories
+let g:netrw_liststyle=3
