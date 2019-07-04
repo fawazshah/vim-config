@@ -36,7 +36,6 @@ filetype plugin indent on    " required
 
 syntax on
 set ruler
-set number
 set numberwidth=1
 set tabstop=2
 set shiftwidth=2
@@ -44,6 +43,15 @@ set expandtab
 :map t :echo 'Current time is ' . strftime('%c')<CR>
 colorscheme lucariox
 set runtimepath^=~/.vim/plugin
+
+" The buffer with focus has hybrid numbering (relative + absolute numbering)
+" Buffers without focus just have absolute numbering
+set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained * set relativenumber
+:  autocmd BufLeave,FocusLost   * set norelativenumber
+:augroup END
 
 " Create undo directory
 " Allows undo even after a file has been closed
